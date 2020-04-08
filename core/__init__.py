@@ -1,4 +1,10 @@
 class Options:
+    # 窗口对象
+    win_msd = None
+
+    # 线程锁
+    lock = None
+
     # 扫描目标
     target = None
 

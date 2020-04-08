@@ -1,13 +1,14 @@
 from core.utils import Logger
-from core import Options
 from core import *
 from core import startserver
 from PyQt5 import QtCore
 
 
 class WinMsd:
-    def __init__(self, w):
+    def __init__(self, w, app):
         self.w = w
+        self.app = app
+        self.res_num = 0
 
     def init_window(self):
         w = self.w
@@ -86,6 +87,22 @@ class WinMsd:
                         w.checkBox_detail.setChecked(True)
                 elif conf_key == 'debug':
                     Options.debug = conf_val
+
+    # 打印日志
+    def logger(self, *ss):
+        s = ''
+        for tmp_str in ss:
+            s += str(tmp_str) + ' '
+        if s.endswith(' '):
+            s = s[:-1]
+        if len(s) > 0:
+            self.w.plainTextEdit_log.setPlainText(s)
+
+    # 添加结果
+    def add_result(self, url, status_code):
+        self.res_num += 1
+        r = "%d    %s        %d" % (self.res_num, url, status_code)
+        self.w.listWidget_result.addItem(r)
 
     # 切换扫描速度
     def change_speed(self):

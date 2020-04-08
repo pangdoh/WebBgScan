@@ -1,12 +1,14 @@
 from core import Options
 from core.utils import Logger
 from core.executor import threador
+import threading
+import time
 
 
 def startup():
     Logger.log('配置信息:')
     for attr in dir(Options):
-        if attr.startswith('__'):
+        if attr.startswith('__') or attr == 'win_msd' or attr == 'lock':
             continue
         Logger.log("    >> %s:" % attr, getattr(Options, attr))
 
@@ -22,10 +24,12 @@ def startup():
     Logger.debug('线程池大小：', n)
     # 创建线程池
     po = threador.create_thread_pool(n)
+    # 创建锁对象
+    Options.lock = threading.Lock()
 
     for language in iter(Options.languages):
         # 读取字典
-        dict_file = 'dictionaries/%s' % language
+        dict_file = 'dict/%s' % language
         with open(dict_file, encoding='utf-8') as f:
             while True:
                 url = f.readline()
@@ -36,4 +40,5 @@ def startup():
                     continue
                 # 执行网络请求
                 threador.exec_tasks(po, url)
-        Logger.log('文件读取完毕')
+    Logger.log('文件读取完毕')
+    time.sleep(100)

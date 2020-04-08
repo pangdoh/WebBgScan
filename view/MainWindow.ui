@@ -151,6 +151,9 @@
     <pointsize>12</pointsize>
    </font>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="mouseTracking">
    <bool>false</bool>
   </property>
@@ -180,9 +183,9 @@
     <property name="geometry">
      <rect>
       <x>29</x>
-      <y>369</y>
+      <y>309</y>
       <width>941</width>
-      <height>261</height>
+      <height>321</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -199,10 +202,15 @@ border:1px solid #aaa;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>10</y>
        <width>941</width>
-       <height>261</height>
+       <height>301</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
      </property>
      <property name="autoScrollMargin">
       <number>10</number>
@@ -218,7 +226,7 @@ border:1px solid #aaa;</string>
       <x>30</x>
       <y>220</y>
       <width>940</width>
-      <height>101</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -231,17 +239,29 @@ border:1px solid #aaa;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QTextEdit" name="textEdit_log">
+    <widget class="QPlainTextEdit" name="plainTextEdit_log">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
        <width>921</width>
-       <height>81</height>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="cursor" stdset="0">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">border:0px;</string>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
@@ -252,7 +272,7 @@ border:1px solid #aaa;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>350</y>
+      <y>290</y>
       <width>72</width>
       <height>15</height>
      </rect>
@@ -284,7 +304,7 @@ border:1px solid #aaa;</string>
      </font>
     </property>
     <property name="text">
-     <string>日志信息：</string>
+     <string>操作日志：</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget_option" native="true">

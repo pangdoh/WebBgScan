@@ -1,5 +1,5 @@
 from core.gui import window
-from core.utils import Logger
+from core import Options
 from view import MainWindow
 from PyQt5 import QtWidgets
 import sys
@@ -11,7 +11,8 @@ if __name__ == '__main__':
     w = MainWindow.Ui_MainWindow()
     w.setupUi(mw)
 
-    win_msd = window.WinMsd(w)
+    win_msd = window.WinMsd(w, app)
+    Options.win_msd = win_msd
     # 初始化配置
     win_msd.init_window()
 
@@ -26,6 +27,9 @@ if __name__ == '__main__':
 
     # 切换扫描速度
     w.comboBox_speed.currentIndexChanged.connect(win_msd.change_speed)
+
+    # test
+    # w.plainTextEdit_log.setPlainText()
 
     mw.show()
     sys.exit(app.exec_())
