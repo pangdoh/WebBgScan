@@ -6,10 +6,10 @@ class Options:
     debug = False
 
     # 状态码
-    status_code = [200, 304, 403]
+    status_code = ['200', '3XX', '403']
 
-    # 并发性：1 低、 2 中、 3 高
-    concurrency = 2
+    # 并发性：0 低、 1 中、 2 高
+    concurrency = 1
 
     # 指定开发语言
     languages = ['php', 'asp', 'aspx', 'jsp']

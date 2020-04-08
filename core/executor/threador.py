@@ -18,11 +18,14 @@ def request_(url):
     # 网络请求
     res = requests.get(url)
     for status_code in Options.status_code:
-        if status_code == res.status_code:
+        if status_code == '3XX':
+            if str(res.status_code).startswith('3'):
+                Logger.log('发现：', url, status_code)
+        elif int(status_code) == res.status_code:
             Logger.log('发现：', url, status_code)
 
-    # 请求延迟
     if Options.delay and Options.delay > 0:
+        # 设置延迟
         time.sleep(Options.delay)
 
 

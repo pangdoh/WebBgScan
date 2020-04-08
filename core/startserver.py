@@ -4,7 +4,6 @@ from core.executor import threador
 
 
 def startup():
-    Logger.log('--启动程序--')
     Logger.log('配置信息:')
     for attr in dir(Options):
         if attr.startswith('__'):
@@ -13,9 +12,9 @@ def startup():
 
     if Options.delay and Options.delay > 0:
         n = 1
-    elif Options.concurrency == 3:
-        n = 32
     elif Options.concurrency == 2:
+        n = 32
+    elif Options.concurrency == 1:
         n = 8
     else:
         n = 2
@@ -30,8 +29,11 @@ def startup():
         with open(dict_file, encoding='utf-8') as f:
             while True:
                 url = f.readline()
-                url = url.strip()
                 if not url:
                     break
+                url = url.strip()
+                if url == '':
+                    continue
                 # 执行网络请求
                 threador.exec_tasks(po, url)
+        Logger.log('文件读取完毕')
