@@ -1,10 +1,4 @@
 class Options:
-    # 窗口对象
-    win_msd = None
-
-    # 线程锁
-    lock = None
-
     # 扫描目标
     target = None
 
@@ -25,3 +19,13 @@ class Options:
 
     # 显示扫描过程
     detail = False
+
+
+class StaticArea:
+    win_msd = None
+    lock = None
+    request_times = 0
+    task_number = 0
+    task_queue = 0
+    completed = 0
+    error_times = 0

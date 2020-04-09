@@ -1,5 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
-from core import Options
+from core import *
 from core.utils import Logger
 import requests
 import time
@@ -13,28 +13,48 @@ def request_(url):
         url = url[1:]
     url = "%s/%s" % (target, url)
     if Options.detail:
-        Options.lock.acquire()
+        StaticArea.lock.acquire()
+        StaticArea.request_times += 1
+        StaticArea.task_queue -= 1
         Logger.log('发送请求：', url)
-        Options.lock.release()
+        StaticArea.lock.release()
 
     # 网络请求
+    res = None
     try:
         res = requests.get(url)
     except Exception as e:
+        StaticArea.lock.acquire()
+        StaticArea.error_times += 1
         Logger.log(e)
-        return
-    for status_code in Options.status_code:
-        if status_code == '3XX':
-            if str(res.status_code).startswith('3'):
-                Options.lock.acquire()
+        StaticArea.lock.release()
+
+    StaticArea.lock.acquire()
+    StaticArea.completed += 1
+    StaticArea.lock.release()
+    if res:
+        for status_code in Options.status_code:
+            if status_code == '3XX':
+                if str(res.status_code).startswith('3'):
+                    StaticArea.lock.acquire()
+                    Logger.log('发现：', url, status_code)
+                    if StaticArea.win_msd:
+                        StaticArea.win_msd.add_result(url, res.status_code)
+                    StaticArea.lock.release()
+            elif int(status_code) == res.status_code:
+                StaticArea.lock.acquire()
                 Logger.log('发现：', url, status_code)
-                Options.win_msd.add_result(url, res.status_code)
-                Options.lock.release()
-        elif int(status_code) == res.status_code:
-            Options.lock.acquire()
-            Logger.log('发现：', url, status_code)
-            Options.win_msd.add_result(url, res.status_code)
-            Options.lock.release()
+                if StaticArea.win_msd:
+                    StaticArea.win_msd.add_result(url, res.status_code)
+                StaticArea.lock.release()
+
+    if Options.debug:
+        StaticArea.lock.acquire()
+        print('任务数量：', StaticArea.task_number)
+        print('任务队列：', StaticArea.task_queue)
+        print('发送请求：', StaticArea.request_times)
+        print('完成请求：', StaticArea.completed)
+        StaticArea.lock.release()
 
     if Options.delay and Options.delay > 0:
         # 设置延迟

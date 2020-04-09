@@ -1,5 +1,5 @@
 from core.gui import window
-from core import Options
+from core import *
 from view import MainWindow
 from PyQt5 import QtWidgets
 import sys
@@ -12,7 +12,7 @@ if __name__ == '__main__':
     w.setupUi(mw)
 
     win_msd = window.WinMsd(w, app)
-    Options.win_msd = win_msd
+    StaticArea.win_msd = win_msd
     # 初始化配置
     win_msd.init_window()
 

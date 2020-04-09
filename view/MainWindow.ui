@@ -13,19 +13,19 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>700</height>
+    <height>790</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1000</width>
-    <height>700</height>
+    <height>790</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1000</width>
-    <height>700</height>
+    <height>790</height>
    </size>
   </property>
   <property name="palette">
@@ -185,7 +185,7 @@
       <x>29</x>
       <y>309</y>
       <width>941</width>
-      <height>321</height>
+      <height>381</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -204,7 +204,7 @@ border:1px solid #aaa;</string>
        <x>0</x>
        <y>10</y>
        <width>941</width>
-       <height>301</height>
+       <height>341</height>
       </rect>
      </property>
      <property name="font">
@@ -890,6 +890,174 @@ border:1px solid #aaa;</string>
     </property>
     <property name="text">
      <string>显示细节</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_task_number">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>710</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>任务数量：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_task_queue">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>710</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>任务队列:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_task_queue_val">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>706</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:0px;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_request_times">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>710</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>发送请求:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_request_times_val">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>706</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:0px;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_completed">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>710</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>完成请求:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_completed_val">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>706</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:0px;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_task_number_val">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>706</y>
+      <width>61</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:0px;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
     </property>
    </widget>
   </widget>

@@ -1,4 +1,4 @@
-from core import Options
+from core import *
 from core.utils import Logger
 from core.executor import threador
 import threading
@@ -8,7 +8,7 @@ import time
 def startup():
     Logger.log('配置信息:')
     for attr in dir(Options):
-        if attr.startswith('__') or attr == 'win_msd' or attr == 'lock':
+        if attr.startswith('__'):
             continue
         Logger.log("    >> %s:" % attr, getattr(Options, attr))
 
@@ -25,7 +25,10 @@ def startup():
     # 创建线程池
     po = threador.create_thread_pool(n)
     # 创建锁对象
-    Options.lock = threading.Lock()
+    StaticArea.lock = threading.Lock()
+
+    # 创建计时器
+    timer = 0
 
     for language in iter(Options.languages):
         # 读取字典
@@ -38,7 +41,14 @@ def startup():
                 url = url.strip()
                 if url == '':
                     continue
+                if timer > n:
+                    time.sleep(2)
+                    timer = 0
+                else:
+                    timer += 1
                 # 执行网络请求
                 threador.exec_tasks(po, url)
+                # 配置任务数量信息
+                StaticArea.task_number += 1
+                StaticArea.task_queue += 1
     Logger.log('文件读取完毕')
-    time.sleep(100)
