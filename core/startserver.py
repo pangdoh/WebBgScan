@@ -15,20 +15,17 @@ def startup():
     if Options.delay and Options.delay > 0:
         n = 1
     elif Options.concurrency == 2:
-        n = 32
+        n = 16
     elif Options.concurrency == 1:
-        n = 8
+        n = 4
     else:
-        n = 2
+        n = 1
 
     Logger.debug('线程池大小：', n)
     # 创建线程池
     po = threador.create_thread_pool(n)
     # 创建锁对象
     StaticArea.lock = threading.Lock()
-
-    # 创建计时器
-    timer = 0
 
     for language in iter(Options.languages):
         # 读取字典
@@ -41,14 +38,13 @@ def startup():
                 url = url.strip()
                 if url == '':
                     continue
-                if timer > n:
-                    time.sleep(2)
-                    timer = 0
-                else:
-                    timer += 1
                 # 执行网络请求
                 threador.exec_tasks(po, url)
                 # 配置任务数量信息
                 StaticArea.task_number += 1
                 StaticArea.task_queue += 1
+                # 控制任务队列长度
+                while StaticArea.task_queue > 2 * n:
+                    Logger.debug('延迟读取文件3秒... 任务队列:', StaticArea.task_queue)
+                    time.sleep(3)
     Logger.log('文件读取完毕')

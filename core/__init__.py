@@ -20,6 +20,9 @@ class Options:
     # 显示扫描过程
     detail = False
 
+    # 设置请求头
+    headers = None
+
 
 class StaticArea:
     win_msd = None

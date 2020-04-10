@@ -22,7 +22,16 @@ def request_(url):
     # 网络请求
     res = None
     try:
-        res = requests.get(url)
+        if Options.headers:
+            headers = Options.headers
+        else:
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0",
+                "Accept": "*/*",
+                "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+                "Accept-Encoding": "gzip, deflate",
+            }
+        res = requests.get(url, headers=headers)
     except Exception as e:
         StaticArea.lock.acquire()
         StaticArea.error_times += 1
