@@ -2,6 +2,7 @@ from core.utils import Logger
 from core import *
 from core import startserver
 from PyQt5 import QtCore
+import os
 
 
 class WinMsd:
@@ -9,6 +10,9 @@ class WinMsd:
         self.w = w
         self.app = app
         self.res_num = 0
+        self.start = False
+        self.stop = False
+        self.end = False
 
     def init_window(self):
         w = self.w
@@ -88,6 +92,25 @@ class WinMsd:
                 elif conf_key == 'debug':
                     Options.debug = conf_val
 
+        # 获取资源数量
+        Logger.log('获取资源数量：')
+        file_dir = 'dict'
+        for file in os.listdir(file_dir):
+            count = str(len(open('dict/%s' % file, 'r', encoding='utf-8').readlines()))
+            # Logger.log(file, count)
+            if file == 'php':
+                w.label_php_num.setText(count)
+            elif file == 'asp':
+                w.label_asp_num.setText(count)
+            elif file == 'aspx':
+                w.label_aspx_num.setText(count)
+            elif file == 'jsp':
+                w.label_jsp_num.setText(count)
+            elif file == 'others':
+                w.label_others_num.setText(count)
+            elif file == 'user_defined':
+                w.label_user_defined_num.setText(count)
+
     # 打印日志
     def logger(self, *ss):
         s = ''
@@ -104,6 +127,13 @@ class WinMsd:
         r = "%d    %s        %d" % (self.res_num, url, status_code)
         self.w.listWidget_result.addItem(r)
 
+    # 设置扫描数量信息
+    def set_request_number(self, **kwargs):
+        self.w.label_task_number_val.setText(str(kwargs.get('task_number')))
+        self.w.label_task_queue_val.setText(str(kwargs.get('task_queue')))
+        self.w.label_request_times_val.setText(str(kwargs.get('request_times')))
+        self.w.label_completed_val.setText(str(kwargs.get('completed')))
+
     # 切换扫描速度
     def change_speed(self):
         w = self.w
@@ -117,6 +147,9 @@ class WinMsd:
     def push_start(self):
         w = self.w
         Logger.log('--开始扫描--')
+        self.start = True
+        self.stop = False
+        self.end = False
         # 设置控件状态
         w.pushButton_start.setEnabled(False)
         w.pushButton_stop.setEnabled(True)
@@ -181,6 +214,9 @@ class WinMsd:
     def push_stop(self):
         w = self.w
         Logger.log('--暂停扫描--')
+        self.stop = True
+        self.start = False
+        self.end = False
         w.pushButton_stop.setEnabled(False)
         w.pushButton_end.setEnabled(True)
         w.pushButton_start.setEnabled(True)
@@ -190,6 +226,9 @@ class WinMsd:
     def push_end(self):
         w = self.w
         Logger.log('--结束扫描--')
+        self.end = True
+        self.start = False
+        self.stop = False
         # 设置控件状态
         w.pushButton_stop.setEnabled(False)
         w.pushButton_end.setEnabled(False)

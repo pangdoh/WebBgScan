@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4561e4f5-1e53-4cc6-96a2-4435a98f4e8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/test/1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/test/2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/tubiao.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/img/tubiao.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WBS.py" beforeDir="false" afterPath="$PROJECT_DIR$/WBS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmd_start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/wbs.config" beforeDir="false" afterPath="$PROJECT_DIR$/conf/wbs.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/executor/threador.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/executor/threador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/gui/window.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/gui/window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/startserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/startserver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/test/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/test/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MainWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/view/MainWindow.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/startserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="56" column="20" lean-forward="true" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+            <state relative-caret-position="203">
+              <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -37,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WBS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="380">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -47,22 +49,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd_start.py">
+        <entry file="file://$PROJECT_DIR$/view/MainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="321">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/utils/Logger.py">
+        <entry file="file://$PROJECT_DIR$/cmd_start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -70,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/executor/threador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-697">
-              <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+            <state relative-caret-position="1480">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -80,31 +88,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/test/1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="17" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/test/2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/gui/window.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="174" column="41" lean-forward="true" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
+            <state relative-caret-position="1594">
+              <caret line="210" column="29" lean-forward="true" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -124,7 +111,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>wih</find>
-      <find>debug</find>
       <find>detail</find>
       <find>concurrency</find>
       <find>index</find>
@@ -139,6 +125,11 @@
       <find>win_msd</find>
       <find>可能需要关闭扫描</find>
       <find>连接异常</find>
+      <find>QApplication</find>
+      <find>延迟读取文件3秒</find>
+      <find>debug</find>
+      <find>icon</find>
+      <find>开始</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,19 +149,20 @@
         <option value="$PROJECT_DIR$/core/gui/confWindow.py" />
         <option value="$PROJECT_DIR$/core/gui/conf_window.py" />
         <option value="$PROJECT_DIR$/core/gui/conf_msd.py" />
-        <option value="$PROJECT_DIR$/conf/wbs.config" />
         <option value="$PROJECT_DIR$/dict/asp" />
         <option value="$PROJECT_DIR$/dict/aspx" />
         <option value="$PROJECT_DIR$/dict/jsp" />
         <option value="$PROJECT_DIR$/dict/php" />
-        <option value="$PROJECT_DIR$/core/gui/window.py" />
-        <option value="$PROJECT_DIR$/core/utils/Logger.py" />
         <option value="$PROJECT_DIR$/core/test/1.py" />
-        <option value="$PROJECT_DIR$/core/test/2.py" />
         <option value="$PROJECT_DIR$/core/__init__.py" />
         <option value="$PROJECT_DIR$/cmd_start.py" />
-        <option value="$PROJECT_DIR$/core/executor/threador.py" />
+        <option value="$PROJECT_DIR$/core/test/2.py" />
         <option value="$PROJECT_DIR$/WBS.py" />
+        <option value="$PROJECT_DIR$/core/utils/Logger.py" />
+        <option value="$PROJECT_DIR$/conf/wbs.config" />
+        <option value="$PROJECT_DIR$/core/executor/threador.py" />
+        <option value="$PROJECT_DIR$/view/MainWindow.py" />
+        <option value="$PROJECT_DIR$/core/gui/window.py" />
         <option value="$PROJECT_DIR$/core/startserver.py" />
       </list>
     </option>
@@ -202,12 +194,6 @@
               <item name="WebBgScan" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="WebBgScan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebBgScan" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -219,6 +205,16 @@
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Git\GitHub\WebBgScan\view" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Git\GitHub\WebBgScan" />
+      <recent name="F:\Git\GitHub\WebBgScan\view" />
+      <recent name="F:\Git\GitHub\WebBgScan\img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -232,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.cmd_start">
+  <component name="RunManager" selected="Python.WBS">
     <configuration name="1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WebBgScan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -317,7 +313,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="threador" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="window" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WebBgScan" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -325,11 +321,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core/executor" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core/gui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/executor/threador.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/gui/window.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -340,11 +336,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.cmd_start" />
-        <item itemvalue="Python.2" />
-        <item itemvalue="Python.1 (1)" />
         <item itemvalue="Python.WBS" />
-        <item itemvalue="Python.threador" />
+        <item itemvalue="Python.window" />
+        <item itemvalue="Python.2" />
+        <item itemvalue="Python.cmd_start" />
+        <item itemvalue="Python.1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -415,13 +411,6 @@
     <entry file="file://$PROJECT_DIR$/core/executor/processor.py" />
     <entry file="file://$PROJECT_DIR$/core/executor/__init__.py" />
     <entry file="file://$PROJECT_DIR$/dictionaries/userSettings" />
-    <entry file="file://$PROJECT_DIR$/view/MainWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-645839530/PyQt5/QtWidgets/QComboBox.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -444,13 +433,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/gui/conf_msd.py" />
-    <entry file="file://$PROJECT_DIR$/conf/wbs.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dict/others">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -506,16 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/gui/window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="174" column="41" lean-forward="true" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-645839530/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -540,34 +512,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-645839530/PyQt5/QtCore/QCoreApplication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="138" column="11" lean-forward="true" selection-start-line="138" selection-start-column="11" selection-end-line="138" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/utils/Logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="201">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/wbs.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/MainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WBS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="380">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/utils/Logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/executor/threador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+        <state relative-caret-position="1480">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -576,18 +569,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd_start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/gui/window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1594">
+          <caret line="210" column="29" lean-forward="true" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/startserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="56" column="20" lean-forward="true" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        <state relative-caret-position="203">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -3,6 +3,7 @@ from core.utils import Logger
 from core.executor import threador
 import threading
 import time
+from PyQt5.QtWidgets import QApplication
 
 
 def startup():
@@ -32,6 +33,31 @@ def startup():
         dict_file = 'dict/%s' % language
         with open(dict_file, encoding='utf-8') as f:
             while True:
+                end_flag = False
+                while StaticArea.win_msd.end:
+                    StaticArea.lock.acquire()
+                    request_times = StaticArea.request_times
+                    completed = StaticArea.completed
+                    StaticArea.lock.release()
+                    if request_times == completed:
+                        end_flag = True
+                        break
+                    else:
+                        time.sleep(1)
+                        # 前端刷新
+                        StaticArea.lock.acquire()
+                        QApplication.processEvents()
+                        StaticArea.lock.release()
+                if end_flag:
+                    break
+
+                while StaticArea.win_msd.stop:
+                    time.sleep(1)
+                    # 前端刷新
+                    StaticArea.lock.acquire()
+                    QApplication.processEvents()
+                    StaticArea.lock.release()
+
                 url = f.readline()
                 if not url:
                     break
@@ -43,6 +69,12 @@ def startup():
                     break
                 # 执行网络请求
                 threador.exec_tasks(po, url)
+
+                # 前端刷新
+                StaticArea.lock.acquire()
+                QApplication.processEvents()
+                StaticArea.lock.release()
+
                 # 配置任务数量信息
                 StaticArea.task_number += 1
                 StaticArea.task_queue += 1
@@ -50,8 +82,13 @@ def startup():
                 if StaticArea.task_queue > 2 * n:
                     while True:
                         Logger.debug('延迟读取文件3秒... 任务队列:', StaticArea.task_queue)
-                        time.sleep(3)
+                        for i in range(3):
+                            time.sleep(1)
+                            # 前端刷新
+                            StaticArea.lock.acquire()
+                            QApplication.processEvents()
+                            StaticArea.lock.release()
+
                         if StaticArea.task_queue < n:
                             break
-
     Logger.log('结束')

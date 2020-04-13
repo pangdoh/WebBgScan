@@ -166,6 +166,10 @@
   <property name="windowTitle">
    <string>WBS</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/tubiao.ico</normaloff>img/tubiao.ico</iconset>
+  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>

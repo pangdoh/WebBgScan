@@ -43,6 +43,9 @@ def request_(url):
         Logger.log('可能需要关闭扫描')
         Logger.log(e)
         StaticArea.lock.release()
+    except requests.exceptions.MissingSchema as e:
+        Logger.log('无效url:', url)
+        print(e)
     except Exception as e:
         StaticArea.lock.acquire()
         StaticArea.error_times += 1
@@ -76,6 +79,8 @@ def request_(url):
         Logger.log('完成请求：', StaticArea.completed)
         Logger.log('error_times：', StaticArea.error_times)
         Logger.log('conn_error_rate：', StaticArea.conn_error_rate)
+        StaticArea.win_msd.set_request_number(task_number=StaticArea.task_number, task_queue=StaticArea.task_queue,
+                                              request_times=StaticArea.request_times, completed=StaticArea.completed)
         StaticArea.lock.release()
 
     if Options.delay and Options.delay > 0:
