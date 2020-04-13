@@ -32,3 +32,4 @@ class StaticArea:
     task_queue = 0
     completed = 0
     error_times = 0
+    conn_error_rate = 0

@@ -28,8 +28,5 @@ if __name__ == '__main__':
     # 切换扫描速度
     w.comboBox_speed.currentIndexChanged.connect(win_msd.change_speed)
 
-    # test
-    # w.plainTextEdit_log.setPlainText()
-
     mw.show()
     sys.exit(app.exec_())

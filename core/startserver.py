@@ -38,13 +38,20 @@ def startup():
                 url = url.strip()
                 if url == '':
                     continue
+                if StaticArea.conn_error_rate > 5 * n:
+                    print('连续性远程主机强制拒绝连接，扫描被迫关闭。')
+                    break
                 # 执行网络请求
                 threador.exec_tasks(po, url)
                 # 配置任务数量信息
                 StaticArea.task_number += 1
                 StaticArea.task_queue += 1
                 # 控制任务队列长度
-                while StaticArea.task_queue > 2 * n:
-                    Logger.debug('延迟读取文件3秒... 任务队列:', StaticArea.task_queue)
-                    time.sleep(3)
-    Logger.log('文件读取完毕')
+                if StaticArea.task_queue > 2 * n:
+                    while True:
+                        Logger.debug('延迟读取文件3秒... 任务队列:', StaticArea.task_queue)
+                        time.sleep(3)
+                        if StaticArea.task_queue < n:
+                            break
+
+    Logger.log('结束')

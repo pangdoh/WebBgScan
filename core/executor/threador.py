@@ -32,6 +32,17 @@ def request_(url):
                 "Accept-Encoding": "gzip, deflate",
             }
         res = requests.get(url, headers=headers)
+        StaticArea.lock.acquire()
+        if StaticArea.conn_error_rate > 0:
+            StaticArea.conn_error_rate -= 1
+        StaticArea.lock.release()
+    except requests.exceptions.ConnectionError as e:
+        StaticArea.lock.acquire()
+        StaticArea.conn_error_rate += 1
+        StaticArea.error_times += 1
+        Logger.log('可能需要关闭扫描')
+        Logger.log(e)
+        StaticArea.lock.release()
     except Exception as e:
         StaticArea.lock.acquire()
         StaticArea.error_times += 1
@@ -59,10 +70,12 @@ def request_(url):
 
     if Options.debug:
         StaticArea.lock.acquire()
-        print('任务数量：', StaticArea.task_number)
-        print('任务队列：', StaticArea.task_queue)
-        print('发送请求：', StaticArea.request_times)
-        print('完成请求：', StaticArea.completed)
+        Logger.log('任务数量：', StaticArea.task_number)
+        Logger.log('任务队列：', StaticArea.task_queue)
+        Logger.log('发送请求：', StaticArea.request_times)
+        Logger.log('完成请求：', StaticArea.completed)
+        Logger.log('error_times：', StaticArea.error_times)
+        Logger.log('conn_error_rate：', StaticArea.conn_error_rate)
         StaticArea.lock.release()
 
     if Options.delay and Options.delay > 0:
