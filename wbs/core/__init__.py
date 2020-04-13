@@ -33,3 +33,13 @@ class StaticArea:
     completed = 0
     error_times = 0
     conn_error_rate = 0
+
+    @staticmethod
+    def reset():
+        StaticArea.lock = None
+        StaticArea.request_times = 0
+        StaticArea.task_number = 0
+        StaticArea.task_queue = 0
+        StaticArea.completed = 0
+        StaticArea.error_times = 0
+        StaticArea.conn_error_rate = 0

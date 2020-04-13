@@ -1,7 +1,7 @@
-from core.gui import window
-from core import *
-from view import MainWindow
+from wbs.core.gui import window
+from wbs.view import MainWindow
 from PyQt5 import QtWidgets
+from wbs.core import *
 import sys
 
 

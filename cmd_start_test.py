@@ -1,5 +1,9 @@
-from core import *
-from core import startserver
+from wbs.core import *
+from wbs.core import startserver
+
+"""
+仅用于测试，当前状态：不可用
+"""
 
 Options.status_code = ['200', '3XX', '500']
 Options.languages = ['php']

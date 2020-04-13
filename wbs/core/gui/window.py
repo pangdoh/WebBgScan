@@ -1,6 +1,6 @@
-from core.utils import Logger
-from core import *
-from core import startserver
+from wbs.core.utils import Logger
+from wbs.core import startserver
+from wbs.core import *
 from PyQt5 import QtCore
 import os
 
@@ -133,6 +133,7 @@ class WinMsd:
         self.w.label_task_queue_val.setText(str(kwargs.get('task_queue')))
         self.w.label_request_times_val.setText(str(kwargs.get('request_times')))
         self.w.label_completed_val.setText(str(kwargs.get('completed')))
+        self.w.label_error_times_val.setText(str(kwargs.get('error_times')))
 
     # 切换扫描速度
     def change_speed(self):
@@ -229,6 +230,7 @@ class WinMsd:
         self.end = True
         self.start = False
         self.stop = False
+
         # 设置控件状态
         w.pushButton_stop.setEnabled(False)
         w.pushButton_end.setEnabled(False)

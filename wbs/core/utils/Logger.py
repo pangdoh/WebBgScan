@@ -1,4 +1,4 @@
-from core import *
+from wbs.core import *
 
 
 # 显示调试信息
@@ -9,6 +9,4 @@ def debug(*args, sep=' ', end='\n', file=None):
 
 # 显示日志
 def log(*args, sep=' ', end='\n', file=None):
-    if StaticArea.win_msd:
-        StaticArea.win_msd.logger(*args)
     print(*args, sep=sep, end=end, file=file)
